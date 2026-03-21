@@ -1,0 +1,12 @@
+# Ignore the secret environment variables
+.env
+
+# Ignore all application configuration data and databases
+*/config/
+*/data/
+*/logs/
+*.db
+*.sqlite
+
+# Ignore Mac system files (just in case)
+.DS_Store
