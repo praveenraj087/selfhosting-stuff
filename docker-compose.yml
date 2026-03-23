@@ -207,6 +207,7 @@ services:
     environment:
       - TZ=${TZ}
       - FTLCONF_webserver_api_password=${PIHOLE_PASSWORD}
+      - FTLCONF_webserver_session_timeout=2592000
     volumes:
       - ./pihole/etc-pihole:/etc/pihole
       - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
@@ -214,4 +215,17 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
       - "8089:80/tcp" 
+    restart: unless-stopped
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./portainer/data:/data
+    ports:
+      - "9000:9000"
+      - "9443:9443"
     restart: unless-stopped
