@@ -8,13 +8,15 @@ This is my not-so-fully automated media server stack. It is supposed to make me 
 * **Hardware Transcoding**: Tdarr is configured with Nvidia GPU passthrough to rapidly shrink media files to H.265.
 * **Quality Control**: Profilarr is set up to automatically enforce Dictionarry rules for all downloads.
 * **Remote Requests and Alerts**: Fully integrated with Seerr, Icarus and ntfy.sh for real-time mobile requests and download notifications.
-
+* **Pi-Hole**: Network-wide ad-blocker with custom blocklists.
+* **Portainer**: Container Management Tool.
+  
 ## Things I'm Working On
 * **Bazarr:** To fully automate subtitle downloading and synchronization for the media library.
 * **Uptime Monitor:** To keep an eye on container health and server status. I'm thinking Kuma maybe?
-* **Portainer:** For a lightweight, visual GUI to manage my Docker environments.
 * **Homepage Dashboard:** Building out a unified landing page (currently deciding between configuring my existing Glance container or switching to Homepage).
 * **Immich:** Setting up a self-hosted Google Photos alternative for mobile backup.
-* **Pi-hole:** Implementing a network-wide ad blocker and local DNS sinkhole.
+* ~~**Pi-hole:** Implementing a network-wide ad blocker and local DNS sinkhole.~~
+* ~~**Portainer:** For a lightweight, visual GUI to manage my Docker environments.~~
 
 
