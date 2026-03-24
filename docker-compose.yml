@@ -14,6 +14,7 @@ services:
       - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
       - SERVER_COUNTRIES=${SERVER_COUNTRIES}
       - TZ=${TZ}
+      - HTTPPROXY=on
     ports:
       - 9696:9696 # Prowlarr UI is now routed through Gluetun
       - 8080:8080 # qBittorrent
@@ -229,3 +230,14 @@ services:
       - "9000:9000"
       - "9443:9443"
     restart: unless-stopped
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - ./uptime-kuma/data:/app/data
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+
